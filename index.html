@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Front Door Media Lab</title>
+<meta name="description" content="Short videos for West Michigan roofers, plumbers, drywall crews, carpenters and painters. We film your crew on a real job and deliver ready-to-post reels and ads in 5 business days.">
+<meta property="og:title" content="Front Door Media Lab">
+<meta property="og:description" content="Short videos that help West Michigan contractors book the next job.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#141b22">
+<meta property="og:image" content="img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f7f4; --paper-2:#ecebe5; --ink:#141b22; --ink-2:#3d4650;
+  --hiviz:#f2c200; --on-hiviz:#141b22; --night:#141b22; --on-night:#f7f7f4; --on-night-2:#b9c0c7;
+  --s1:16px; --s2:20px; --s3:28px; --s4:clamp(36px,5vw,56px); --s5:clamp(48px,9vw,112px);
+  --gap:clamp(72px,11vw,144px); --pad:clamp(16px,5vw,64px); --max:1240px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --paper:#11171d; --paper-2:#1b232b; --ink:#eef0ec; --ink-2:#b9c0c7; --night:#0a0e12; }
+}
+:root[data-theme="dark"]{ --paper:#11171d; --paper-2:#1b232b; --ink:#eef0ec; --ink-2:#b9c0c7; --night:#0a0e12; }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:Archivo,system-ui,sans-serif;font-size:var(--s1);line-height:1.55;font-variation-settings:"wdth" 100;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--hiviz);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.display{font-weight:850;font-variation-settings:"wdth" 112;line-height:.98;letter-spacing:-.01em}
+h1.display{font-size:clamp(46px,7vw,92px);max-width:12ch}
+h2{font-size:var(--s4);font-weight:800;font-variation-settings:"wdth" 108;line-height:1.05;letter-spacing:-.005em;max-width:16ch}
+h3{font-size:var(--s2);font-weight:750;line-height:1.25}
+p{max-width:62ch}
+.lede{font-size:var(--s2);color:var(--ink-2);max-width:46ch}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:750;font-size:var(--s1);padding:16px 26px;border:0;cursor:pointer;transition:transform .18s var(--ease),background-color .18s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn.hv{background:var(--hiviz);color:var(--on-hiviz)}
+.link{font-weight:700;text-underline-offset:4px}
+
+/* header */
+header{padding:22px 0}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:850;font-variation-settings:"wdth" 115;font-size:18px;line-height:1.05}
+.mark img{width:44px;height:44px;border-radius:10px;flex:none;display:block}
+nav{display:flex;align-items:center;gap:28px}
+nav a.n{text-decoration:none;font-weight:600}
+nav a.n:hover{text-decoration:underline;text-underline-offset:4px}
+nav .btn{padding:12px 18px}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:1.6fr .7fr;gap:clamp(32px,6vw,88px);align-items:center;padding-top:clamp(28px,6vw,72px);padding-bottom:var(--gap)}
+.hero .lede{margin:28px 0 36px}
+.hero .acts{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.phone{justify-self:end;width:min(320px,100%);aspect-ratio:9/16;background:var(--night);border:10px solid var(--night);border-radius:34px;position:relative;overflow:hidden;color:var(--on-night)}
+.frame{position:absolute;inset:0;padding:22px 20px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transition:opacity .5s var(--ease)}
+.frame.on{opacity:1}
+.frame .shot{font-size:14px;color:var(--on-night-2)}
+.frame .cap{font-weight:850;font-variation-settings:"wdth" 110;font-size:30px;line-height:1.05}
+.frame .cap b{background:var(--hiviz);color:var(--on-hiviz);padding:0 6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.frame .time{font-size:13px;color:var(--on-night-2);display:flex;justify-content:space-between}
+.bar{position:absolute;left:20px;right:20px;top:12px;height:3px;background:#ffffff30}
+.bar span{display:block;height:100%;width:0;background:var(--hiviz)}
+.f1{background:#26323c}.f2{background:#3a2f22}.f3{background:#1f3a33}.f4{background:var(--hiviz);color:var(--on-hiviz)}
+.f4 .shot,.f4 .time{color:#141b22b0}
+
+/* statement */
+.state{background:var(--hiviz);color:var(--on-hiviz)}
+.state .wrap{padding-top:var(--gap);padding-bottom:var(--gap);display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(32px,6vw,96px);align-items:end}
+.state h2{max-width:13ch;font-size:clamp(38px,5vw,68px)}
+.state p{font-size:var(--s2);max-width:40ch}
+.state p + p{margin-top:18px}
+
+/* process */
+.process .wrap{padding-top:var(--gap);padding-bottom:var(--gap);display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,96px)}
+.process .intro p{margin-top:20px;color:var(--ink-2)}
+.ticket{list-style:none;counter-reset:t;background:var(--paper-2);padding:clamp(20px,4vw,44px)}
+.ticket li{counter-increment:t;display:grid;grid-template-columns:56px 1fr;gap:8px 20px;padding:22px 0}
+.ticket li + li{border-top:2px solid var(--paper)}
+.ticket li::before{content:counter(t);grid-row:span 2;font-weight:850;font-variation-settings:"wdth" 120;font-size:44px;line-height:1}
+.ticket p{color:var(--ink-2)}
+
+/* lab */
+.lab{background:var(--night);color:var(--on-night)}
+.lab .wrap{padding-top:var(--gap);padding-bottom:var(--gap)}
+.lab .top{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:44px}
+.lab .top p{color:var(--on-night-2);font-size:var(--s2)}
+.trades{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
+.trades button{font:inherit;font-weight:700;background:transparent;color:var(--on-night);border:2px solid #ffffff40;padding:11px 18px;cursor:pointer;transition:background-color .18s var(--ease),border-color .18s var(--ease),transform .18s var(--ease)}
+.trades button:hover{border-color:var(--hiviz)}
+.trades button:active{transform:scale(.97)}
+.trades button[aria-pressed="true"]{background:var(--hiviz);border-color:var(--hiviz);color:var(--on-hiviz)}
+.hooks{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
+.hook{opacity:0;transform:translateY(8px);transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.hook.in{opacity:1;transform:none}
+.hook .lbl{color:var(--hiviz);font-weight:700;margin-bottom:10px}
+.hook q{display:block;font-size:var(--s3);font-weight:800;font-variation-settings:"wdth" 106;line-height:1.15;quotes:"\201C" "\201D";margin-bottom:14px}
+.hook p{color:var(--on-night-2)}
+.lab .note{margin-top:44px;color:var(--on-night-2)}
+
+/* prices */
+.reels{border-top:2px solid var(--paper-2)}
+.reels .wrap{padding-top:var(--gap);padding-bottom:var(--gap)}
+.reels .head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:end;margin-bottom:var(--s4)}
+.reels .head p{color:var(--ink-2)}
+.reel-grid{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,2vw,24px)}
+.reel-grid video{display:block;width:100%;aspect-ratio:9/16;background:var(--night);object-fit:cover}
+.reel-grid figcaption{padding-top:12px;font-weight:750}
+.reel-grid figcaption span{display:block;font-weight:500;font-size:14px;color:var(--ink-2)}
+.prices .wrap{padding-top:var(--gap);padding-bottom:var(--gap)}
+.prices .head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:40px}
+.prices .head p{color:var(--ink-2)}
+.est{width:100%;border-collapse:collapse;font-size:var(--s1)}
+.est th{text-align:left;font-weight:700;color:var(--ink-2);padding:0 16px 14px 0}
+.est td{padding:22px 16px 22px 0;vertical-align:top;border-top:2px solid var(--paper-2)}
+.est td:first-child{width:24%}
+.est td.amt{text-align:right;white-space:nowrap;font-weight:850;font-variation-settings:"wdth" 110;font-size:var(--s3);padding-right:0}
+.est td.amt small{display:block;font-size:14px;font-weight:500;color:var(--ink-2)}
+.est tr.pick td{background:var(--paper-2)}
+.est tr.pick td:first-child{box-shadow:inset 6px 0 0 var(--hiviz);padding-left:22px}
+.est .name{font-weight:800;font-size:var(--s2)}
+.est .tag{font-weight:600;color:var(--ink-2);display:block}
+.terms{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:44px}
+.terms p{color:var(--ink-2)}
+.calc{margin-top:var(--gap);display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.calc h3{font-size:var(--s3);margin-bottom:12px}
+.calc p{color:var(--ink-2)}
+.calc form{background:var(--paper-2);padding:clamp(20px,4vw,40px)}
+.calc label{display:block;font-weight:700;margin-bottom:8px}
+.calc .row{display:flex;gap:12px;margin-bottom:22px}
+.calc input,.calc select{font:inherit;font-size:var(--s2);padding:12px 14px;border:2px solid var(--ink-2);background:var(--paper);color:var(--ink);width:100%}
+.calc output{display:block;font-size:var(--s3);font-weight:800;line-height:1.2}
+.calc .fine{font-size:14px;margin-top:14px}
+
+/* real */
+.real .wrap{padding-top:var(--gap);padding-bottom:var(--gap);display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px)}
+.real p.lede{margin-top:22px}
+.real ul{list-style:none}
+.real li{padding:18px 0;font-size:var(--s2);font-weight:600}
+.real li + li{border-top:2px solid var(--paper-2)}
+.real li span{display:block;font-size:var(--s1);font-weight:400;color:var(--ink-2);margin-top:4px}
+
+/* faq */
+.faq .wrap{padding-bottom:var(--gap);display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,96px)}
+details{border-top:2px solid var(--paper-2)}
+details:last-child{border-bottom:2px solid var(--paper-2)}
+summary{cursor:pointer;list-style:none;padding:22px 40px 22px 0;font-weight:750;font-size:var(--s2);position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:18px;font-size:28px;font-weight:500;transition:transform .2s var(--ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 24px;color:var(--ink-2)}
+
+/* book */
+.book{background:var(--hiviz);color:var(--on-hiviz)}
+.book .wrap{padding-top:var(--gap);padding-bottom:var(--gap)}
+.book h2{font-size:clamp(40px,7vw,96px);max-width:13ch}
+.book p{font-size:var(--s2);margin:24px 0 36px;max-width:44ch}
+.book .btn{font-size:var(--s2);padding:20px 32px}
+
+footer{background:var(--night);color:var(--on-night-2)}
+footer .wrap{padding-top:44px;padding-bottom:44px;display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:20px;font-size:15px}
+footer strong{color:var(--on-night)}
+footer .brand{display:flex;align-items:center;gap:16px}
+footer .brand img{width:72px;height:auto;border-radius:6px;display:block}
+
+@media (max-width:900px){
+  nav a.n{display:none}
+  .hero .wrap,.state .wrap,.process .wrap,.lab .top,.prices .head,.calc,.real .wrap,.faq .wrap{grid-template-columns:1fr}
+  .phone{justify-self:start;width:min(280px,78vw)}
+  .hooks,.terms,.reels .head{grid-template-columns:1fr}
+  .reel-grid{grid-template-columns:1fr 1fr}
+  .est thead{display:none}
+  .est,.est tbody,.est tr,.est td{display:block;width:100%!important}
+  .est tr{border-top:2px solid var(--paper-2);padding:20px 0}
+  .est tr.pick{background:var(--paper-2);box-shadow:inset 6px 0 0 var(--hiviz);padding:20px 18px 20px 22px}
+  .est tr.pick td,.est tr.pick td:first-child{background:none;box-shadow:none;padding-left:0}
+  .est td{border:0;padding:4px 0}
+  .est td.amt{text-align:left;margin-top:8px}
+}
+@media (max-width:520px){ .mark span{max-width:12ch} nav .btn{padding:11px 14px;font-size:15px} }
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .hook{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Front Door Media Lab, home"><img src="img/logo-icon-96.png" alt="" width="44" height="44"><span>Front Door<br>Media Lab</span></a>
+    <nav aria-label="Main">
+      <a class="n" href="#how">How it works</a>
+      <a class="n" href="#samples">Samples</a>
+      <a class="n" href="#lab">The lab</a>
+      <a class="n" href="#prices">Prices</a>
+      <a class="btn hv" href="https://calendly.com/theexchange-go/30min" target="_blank" rel="noopener">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <h1 id="h1" class="display">Videos that book the next job.</h1>
+      <p class="lede">Short videos for West Michigan roofers, plumbers, drywall crews, carpenters and painters. We film your crew on a real job, then hand you ready-to-post reels and ads in 5 business days.</p>
+      <div class="acts">
+        <a class="btn" href="https://calendly.com/theexchange-go/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
+        <a class="link" href="#prices">See prices</a>
+      </div>
+    </div>
+    <div class="phone" role="img" aria-label="A sample 20-second reel plan for a flat roofing job, shown as four frames: the problem, the crew at work, the finished roof, and a call to action.">
+      <div class="bar"><span id="bar"></span></div>
+      <div class="frame f1 on"><span class="shot">0:00 · Close-up, ponded water</span><span class="cap">Standing water on a flat roof is a <b>clock</b>.</span><span class="time"><span>Hook</span><span>3 sec</span></span></div>
+      <div class="frame f2"><span class="shot">0:03 · Crew pulls old membrane</span><span class="cap">Here's what it was doing underneath.</span><span class="time"><span>Proof</span><span>7 sec</span></span></div>
+      <div class="frame f3"><span class="shot">0:10 · Finished roof, slow push</span><span class="cap">New membrane. Ready for <b>lake-effect</b> snow.</span><span class="time"><span>Payoff</span><span>6 sec</span></span></div>
+      <div class="frame f4"><span class="shot">0:16 · Truck, logo, phone number</span><span class="cap">Free roof check. Call this week.</span><span class="time"><span>Ask</span><span>4 sec</span></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="state" aria-labelledby="h-state">
+  <div class="wrap">
+    <h2 id="h-state">Your best salesman is a finished job.</h2>
+    <div>
+      <p>Homeowners hire the crew they trust. Twenty seconds of your people doing clean work earns that trust faster than a yard sign or a coupon.</p>
+      <p>Most contractors know this and still don't post, because filming and editing is a second job. We take that job off your plate.</p>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="how" aria-labelledby="h-how">
+  <div class="wrap">
+    <div class="intro">
+      <h2 id="h-how">One visit. A month of videos.</h2>
+      <p>You keep working. We stay out of the way and leave with what we need.</p>
+    </div>
+    <ol class="ticket">
+      <li><h3>We film one real job</h3><p>Two to three hours on site, once a month. Your crew, your trucks, your work. No actors, no script for you to memorize.</p></li>
+      <li><h3>We write and cut</h3><p>AI helps us draft scripts and captions fast. A person edits every video by hand, with licensed music cleared for ads.</p></li>
+      <li><h3>You approve</h3><p>First drafts in 5 business days. Two rounds of changes, back in 2 business days each.</p></li>
+      <li><h3>You post or run ads</h3><p>Every video comes sized for Facebook, Instagram, YouTube Shorts and Google, with captions written for you.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="lab" id="lab" aria-labelledby="h-lab">
+  <div class="wrap">
+    <div class="top">
+      <h2 id="h-lab">The first three seconds decide everything.</h2>
+      <p>That's the lab part. Every ad gets several openings, and we keep the one people actually watch. Pick your trade to see the kind of hooks we'd test.</p>
+    </div>
+    <div class="trades" role="group" aria-label="Choose a trade">
+      <button type="button" data-t="roof" aria-pressed="true">Flat roofing</button>
+      <button type="button" data-t="dry" aria-pressed="false">Drywall</button>
+      <button type="button" data-t="plumb" aria-pressed="false">Plumbing</button>
+      <button type="button" data-t="carp" aria-pressed="false">Carpentry</button>
+      <button type="button" data-t="paint" aria-pressed="false">Painting</button>
+    </div>
+    <div class="hooks" id="hooks" aria-live="polite"></div>
+    <p class="note">These are examples. Your real hooks come from your jobs and your customers' questions.</p>
+  </div>
+</section>
+
+<section class="reels" id="samples" aria-labelledby="h-samples">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="h-samples">Five sample reels.</h2>
+      <p>One for each trade we serve. These are samples cut from licensed stock footage to show the style, not client work. Yours would star your own crew on your own jobs.</p>
+    </div>
+    <ul class="reel-grid">
+      <li><figure><video src="samples/roofing.mp4" poster="samples/roofing.jpg" controls playsinline preload="none" aria-label="Flat roofing sample reel, about 20 seconds"></video><figcaption>Flat roofing<span>Sample · 20 sec</span></figcaption></figure></li>
+      <li><figure><video src="samples/drywall.mp4" poster="samples/drywall.jpg" controls playsinline preload="none" aria-label="Drywall sample reel, about 20 seconds"></video><figcaption>Drywall<span>Sample · 20 sec</span></figcaption></figure></li>
+      <li><figure><video src="samples/plumbing.mp4" poster="samples/plumbing.jpg" controls playsinline preload="none" aria-label="Plumbing sample reel, about 20 seconds"></video><figcaption>Plumbing<span>Sample · 20 sec</span></figcaption></figure></li>
+      <li><figure><video src="samples/carpentry.mp4" poster="samples/carpentry.jpg" controls playsinline preload="none" aria-label="Carpentry sample reel, about 20 seconds"></video><figcaption>Carpentry<span>Sample · 20 sec</span></figcaption></figure></li>
+      <li><figure><video src="samples/painting.mp4" poster="samples/painting.jpg" controls playsinline preload="none" aria-label="Painting sample reel, about 20 seconds"></video><figcaption>Painting<span>Sample · 20 sec</span></figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<section class="prices" id="prices" aria-labelledby="h-prices">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="h-prices">Plain prices, written like an estimate.</h2>
+      <p>Start with one Launch Video, or go straight to a monthly plan. Every plan includes a monthly shoot, licensed music and two rounds of changes.</p>
+    </div>
+    <table class="est">
+      <thead><tr><th scope="col">Plan</th><th scope="col">What you get</th><th scope="col" style="text-align:right">Price</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">Launch Video</span><span class="tag">The place to start</span></td><td>One 60 to 90 second "who we are" video, plus 3 short cut-downs for social and ads.</td><td class="amt">$1,500<small>one time</small></td></tr>
+        <tr><td><span class="name">Steady</span><span class="tag">Show up every week</span></td><td>6 short vertical videos a month (15 to 30 seconds), captions, monthly shoot.</td><td class="amt">$1,000<small>per month</small></td></tr>
+        <tr class="pick"><td><span class="name">Growth</span><span class="tag">Most contractors pick this</span></td><td>10 short videos a month, plus 2 ad versions of each top video with different openings, and post captions written for you.</td><td class="amt">$1,750<small>per month</small></td></tr>
+        <tr><td><span class="name">Pro</span><span class="tag">For crews running ads</span></td><td>14 short videos a month, 3 openings tested per ad, one longer job-story video, and a plain monthly report on what worked.</td><td class="amt">$2,750<small>per month</small></td></tr>
+      </tbody>
+    </table>
+    <div class="terms">
+      <div><h3>Three months, then monthly</h3><p>Monthly plans start with a 3-month minimum. After that, stay month to month.</p></div>
+      <div><h3>Founding rate</h3><p>Our first 3 clients get Growth for $1,250 a month for 3 months, in exchange for a short video testimonial.</p></div>
+      <div><h3>You own the videos</h3><p>Once paid, the finished videos are yours to use anywhere, for as long as you like.</p></div>
+    </div>
+
+    <div class="calc">
+      <div>
+        <h3>Does it pay for itself?</h3>
+        <p>Put in what one average job is worth to you. This is simple math, not a promise of results.</p>
+      </div>
+      <form id="calc" onsubmit="return false">
+        <div class="row">
+          <div style="flex:1"><label for="job">One job is worth</label><input id="job" type="number" inputmode="numeric" min="100" step="100" value="8000"></div>
+          <div style="flex:1"><label for="plan">Plan</label><select id="plan"><option value="1000">Steady</option><option value="1750" selected>Growth</option><option value="2750">Pro</option></select></div>
+        </div>
+        <output id="out" for="job plan"></output>
+        <p class="fine">Plan cost per year divided by your job value, rounded up.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="real" aria-labelledby="h-real">
+  <div class="wrap">
+    <div>
+      <h2 id="h-real">Real crews. Real jobs.</h2>
+      <p class="lede">We use AI to work fast, so you pay less than a full production crew. We never use it to fake your work.</p>
+    </div>
+    <ul>
+      <li>Every video uses footage from your own jobs.<span>No stock clips passed off as your crew.</span></li>
+      <li>No made-up customers or reviews.<span>Testimonials come from real customers who agreed to be filmed.</span></li>
+      <li>No cloned voices without written consent.<span>If you want a voiceover in your voice, you sign off first.</span></li>
+      <li>Music that's licensed for ads.<span>So your ads don't get muted or pulled.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <h2 id="h-faq">Questions contractors ask</h2>
+    <div>
+      <details><summary>Do I have to be on camera?</summary><p>No. Most videos show your crew and the work. If you like talking to the camera, we'll use that too.</p></details>
+      <details><summary>Will this get me more calls?</summary><p>We can't promise a number, and you should be wary of anyone who does. We test different openings every month and show you which videos people watched and clicked, so we keep what works and drop what doesn't.</p></details>
+      <details><summary>Do you post the videos for us?</summary><p>We write the captions and hand you every video sized for each platform. You or your office posts them. If you want us to post too, ask on the call.</p></details>
+      <details><summary>What area do you cover?</summary><p>We film on site across West Michigan. If you're farther out, ask and we'll tell you honestly whether it works.</p></details>
+      <details><summary>What if a job site isn't ready on shoot day?</summary><p>We reschedule at no charge. Weather and job sites in Michigan don't keep to a calendar, and we plan for that.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book" aria-labelledby="h-book">
+  <div class="wrap">
+    <h2 id="h-book">Let's look at your next job.</h2>
+    <p>Thirty minutes on the phone. Tell us how you get work today and we'll tell you honestly whether video would help.</p>
+    <a class="btn" href="https://calendly.com/theexchange-go/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
+    <p>Or call or text <a href="tel:+16165101634"><strong>616-510-1634</strong></a>.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand"><img src="img/logo-full-400.jpg" alt="Front Door Media Lab logo" width="72" height="86" loading="lazy"><span><strong>Front Door Media Lab, LLC</strong> · Hamilton, MI · Serving West Michigan · <a href="tel:+16165101634">616-510-1634</a></span></span>
+    <span>Short video for contractors and home-service businesses.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var H={
+    roof:[["Hook A","Standing water on a flat roof is a clock.","Names the worry every building owner already has."],["Hook B","Old membrane off, new one down, in 20 seconds.","A fast time-lapse is hard to scroll past."],["Hook C","Where flat roofs leak first.","A useful tip from the crew they'll call later."]],
+    dry:[["Hook A","Can you find the patch?","A challenge makes people watch to the end."],["Hook B","Hang, tape, mud, sand. Twenty seconds.","Satisfying process footage keeps people watching."],["Hook C","Why your ceiling cracks every Michigan winter.","Answers a question homeowners search for."]],
+    carp:[["Hook A","This staircase started as a stack of boards.","Before and after, told in one sentence."],["Hook B","Measure twice. Here's the second time.","Shows the care customers hope they're paying for."],["Hook C","The joint you'll never see, and why it matters.","Shows the work behind the price."]],
+    paint:[["Hook A","Same room. One day apart.","Before and after is the oldest hook because it works."],["Hook B","The straightest line in this house.","Close-up cut-in work makes people stop."],["Hook C","Why half the job happens before we open a can.","Explains prep, the thing cheap painters skip."]],
+    plumb:[["Hook A","What came out of this drain.","Curiosity does the work in the first second."],["Hook B","Fixed before the family got home.","Speed and care in one line."],["Hook C","The shutoff valve every homeowner should find today.","A tip people act on, from the crew they'll call later."]]
+  };
+  var box=document.getElementById('hooks'),btns=document.querySelectorAll('.trades button');
+  function show(t){
+    box.innerHTML=H[t].map(function(h){return '<div class="hook"><div class="lbl">'+h[0]+'</div><q>'+h[1]+'</q><p>'+h[2]+'</p></div>'}).join('');
+    var els=box.querySelectorAll('.hook');
+    els.forEach(function(e,i){setTimeout(function(){e.classList.add('in')},60+i*70)});
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){btns.forEach(function(x){x.setAttribute('aria-pressed',x===b)});show(b.dataset.t)})});
+  show('roof');
+
+  var job=document.getElementById('job'),plan=document.getElementById('plan'),out=document.getElementById('out');
+  function calc(){
+    var v=Math.max(0,parseFloat(job.value)||0),yr=parseFloat(plan.value)*12;
+    if(v<100){out.textContent='Enter what one job is worth.';return}
+    var n=Math.ceil(yr/v),name=plan.options[plan.selectedIndex].text;
+    out.textContent=name+' costs $'+yr.toLocaleString()+' a year. That’s about '+n+' job'+(n===1?'':'s')+' a year at $'+v.toLocaleString()+' each.';
+  }
+  job.addEventListener('input',calc);plan.addEventListener('change',calc);calc();
+
+  var frames=document.querySelectorAll('.frame'),bar=document.getElementById('bar'),i=0;
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var dur=[3000,3600,3200,2800];
+    function step(){
+      bar.style.transition='none';bar.style.width=(i/4*100)+'%';
+      requestAnimationFrame(function(){bar.style.transition='width '+dur[i]+'ms linear';bar.style.width=((i+1)/4*100)+'%'});
+      setTimeout(function(){frames[i].classList.remove('on');i=(i+1)%4;frames[i].classList.add('on');step()},dur[i]);
+    }
+    step();
+  } else { bar.style.width='25%'; }
+})();
+</script>
+</body>
+</html>
