@@ -79,6 +79,16 @@ nav .btn{padding:11px 20px;font-size:14px}
 .c3{bottom:22px;left:-18px;border-width:0 0 2px 2px}.c4{bottom:22px;right:-18px;border-width:0 2px 2px 0}
 
 /* statement */
+.founder .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,7vw,110px);align-items:center}
+.portrait{position:relative;aspect-ratio:4/5;max-width:420px;width:100%;padding:18px;margin:0 auto}
+.portrait .ph{width:100%;height:100%;border-radius:18px;overflow:hidden;background:radial-gradient(circle at 50% 35%,#1d252d,#0f151b 70%);display:grid;place-items:center;box-shadow:0 0 0 1px #ffffff14 inset}
+.portrait .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait .mono{font-family:var(--serif);font-size:clamp(64px,9vw,108px);color:var(--silver);letter-spacing:.04em;opacity:.85}
+.founder h2{margin-bottom:26px}
+.founder p{font-size:19px}
+.founder p+p{margin-top:18px}
+.founder .sig{margin-top:28px;font-family:var(--serif);font-size:22px;color:var(--text)}
+.founder .sig span{display:block;font-family:inherit;font-size:14px;color:var(--muted);letter-spacing:.04em;margin-top:4px}
 .state .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:end}
 .state p{font-size:19px}
 .state p+p{margin-top:18px}
@@ -151,7 +161,7 @@ footer a:hover{color:var(--gold-2)}
 
 @media (max-width:960px){
   nav a.n{display:none}
-  .hero .wrap,.state .wrap,.head,.promise .wrap,.faq .wrap{grid-template-columns:1fr}
+  .hero .wrap,.state .wrap,.head,.promise .wrap,.faq .wrap,.founder .wrap{grid-template-columns:1fr}
   .reel{justify-self:center;width:min(300px,76vw);margin-top:20px}
   .steps,.plans{grid-template-columns:1fr 1fr}
   .grid5{grid-template-columns:1fr 1fr}
@@ -177,6 +187,7 @@ footer a:hover{color:var(--gold-2)}
       <a class="n" href="#how">How it works</a>
       <a class="n" href="#samples">Samples</a>
       <a class="n" href="#prices">Prices</a>
+      <a class="n" href="#about">About</a>
       <a class="btn" href="https://calendly.com/theexchange-go/30min" target="_blank" rel="noopener">Book a call</a>
     </nav>
   </div>
@@ -274,6 +285,22 @@ footer a:hover{color:var(--gold-2)}
       <li>No cloned voices without written consent.<span>If you want a voiceover in your voice, you sign off first.</span></li>
       <li>Music that's licensed for ads.<span>So your ads don't get muted or pulled.</span></li>
     </ul>
+  </div>
+</section>
+
+<section class="founder" id="about" aria-labelledby="h-about">
+  <div class="wrap rise">
+    <div class="portrait">
+      <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+      <div class="ph"><span class="mono" aria-hidden="true">JH</span></div>
+    </div>
+    <div>
+      <div class="eyebrow">Who you'll work with</div>
+      <h2 id="h-about">Video built on how people <em>actually decide.</em></h2>
+      <p>I'm John Hoogeveen, and I'm earning my PhD in Communication and Media. My research is about how people take in a message and decide who to trust.</p>
+      <p>That's what a good contractor video does. It isn't just nice footage. Every reel is planned around what a homeowner needs to see before they pick up the phone: real work, real people, and a clear next step.</p>
+      <div class="sig">John Hoogeveen<span>Founder, Front Door Media Lab · Hamilton, MI</span></div>
+    </div>
   </div>
 </section>
 
